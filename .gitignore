@@ -1,5 +1,5 @@
-__pycache__/
-logs/*
-plugins/*
+**/__pycache__/**
+logs/
+plugins/
 .env
 ./.env
