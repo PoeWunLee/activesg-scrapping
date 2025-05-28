@@ -1,0 +1,120 @@
+[2025-03-10T00:12:21.036+0000] {processor.py:186} INFO - Started process (PID=20238) to work on /opt/airflow/dags/main.py
+[2025-03-10T00:12:21.045+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T00:12:21.058+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:12:21.057+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T00:12:22.968+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:12:22.881+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T00:12:22.989+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T00:12:23.085+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 2.097 seconds
+[2025-03-10T00:12:59.374+0000] {processor.py:186} INFO - Started process (PID=20304) to work on /opt/airflow/dags/main.py
+[2025-03-10T00:12:59.378+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T00:12:59.392+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:12:59.390+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T00:13:00.542+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:13:00.504+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T00:13:00.555+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T00:13:00.659+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 1.320 seconds
+[2025-03-10T00:13:33.783+0000] {processor.py:186} INFO - Started process (PID=20375) to work on /opt/airflow/dags/main.py
+[2025-03-10T00:13:33.792+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T00:13:33.807+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:13:33.806+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T00:13:36.055+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:13:35.894+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T00:13:36.093+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T00:13:36.207+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 2.444 seconds
+[2025-03-10T00:14:06.393+0000] {processor.py:186} INFO - Started process (PID=20442) to work on /opt/airflow/dags/main.py
+[2025-03-10T00:14:06.395+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T00:14:06.399+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:14:06.398+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T00:14:06.783+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:14:06.768+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T00:14:06.790+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T00:14:06.828+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 0.447 seconds
+[2025-03-10T00:14:37.898+0000] {processor.py:186} INFO - Started process (PID=20507) to work on /opt/airflow/dags/main.py
+[2025-03-10T00:14:37.901+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T00:14:37.905+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:14:37.903+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T00:14:38.606+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:14:38.584+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T00:14:38.618+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T00:14:38.680+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 0.795 seconds
+[2025-03-10T00:15:09.065+0000] {processor.py:186} INFO - Started process (PID=20573) to work on /opt/airflow/dags/main.py
+[2025-03-10T00:15:09.070+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T00:15:09.074+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:15:09.073+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T00:15:09.927+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:15:09.903+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T00:15:09.943+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T00:15:10.036+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 0.988 seconds
+[2025-03-10T00:15:42.675+0000] {processor.py:186} INFO - Started process (PID=20636) to work on /opt/airflow/dags/main.py
+[2025-03-10T00:15:42.702+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T00:15:42.722+0000] {logging_mixin.py:190} INFO - [2025-03-10T00:15:42.720+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T02:54:01.524+0000] {logging_mixin.py:190} INFO - [2025-03-10T02:54:00.998+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T02:54:01.545+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T02:54:01.888+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 3.660 seconds
+[2025-03-10T05:16:24.576+0000] {processor.py:186} INFO - Started process (PID=20647) to work on /opt/airflow/dags/main.py
+[2025-03-10T05:16:24.582+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/main.py for tasks to queue
+[2025-03-10T05:16:24.593+0000] {logging_mixin.py:190} INFO - [2025-03-10T05:16:24.587+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/main.py
+[2025-03-10T05:16:26.025+0000] {logging_mixin.py:190} INFO - [2025-03-10T05:16:25.993+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/main.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/main.py", line 53, in <module>
+    python_callable=scrape,
+                    ^^^^^^
+NameError: name 'scrape' is not defined
+[2025-03-10T05:16:26.041+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/main.py
+[2025-03-10T05:16:26.140+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/main.py took 1.599 seconds

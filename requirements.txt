@@ -1,0 +1,10 @@
+apache-airflow==2.10.5
+apache-airflow-providers-docker
+beautifulsoup4==4.13.3
+pandas==2.2.3
+pytz==2024.1
+Requests==2.32.3
+selenium==4.29.0
+webdriver_manager==4.0.2
+psycopg2==2.9.10
+SQLAlchemy==1.4.54

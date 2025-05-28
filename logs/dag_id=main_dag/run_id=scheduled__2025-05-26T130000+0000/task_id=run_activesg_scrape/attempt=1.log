@@ -1,0 +1,34 @@
+[2025-05-26T13:15:09.410+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-26T13:15:09.446+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_dag.run_activesg_scrape scheduled__2025-05-26T13:00:00+00:00 [queued]>
+[2025-05-26T13:15:09.463+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_dag.run_activesg_scrape scheduled__2025-05-26T13:00:00+00:00 [queued]>
+[2025-05-26T13:15:09.464+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-26T13:15:09.490+0000] {taskinstance.py:2890} INFO - Executing <Task(DockerOperator): run_activesg_scrape> on 2025-05-26 13:00:00+00:00
+[2025-05-26T13:15:09.513+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=214) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-26T13:15:09.515+0000] {standard_task_runner.py:72} INFO - Started process 217 to run task
+[2025-05-26T13:15:09.516+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'run_activesg_scrape', 'scheduled__2025-05-26T13:00:00+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmp1446x9_0']
+[2025-05-26T13:15:09.521+0000] {standard_task_runner.py:105} INFO - Job 45: Subtask run_activesg_scrape
+[2025-05-26T13:15:09.639+0000] {task_command.py:467} INFO - Running <TaskInstance: main_dag.run_activesg_scrape scheduled__2025-05-26T13:00:00+00:00 [running]> on host 1862e9bdadf6
+[2025-05-26T13:15:09.843+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='***@example.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_dag' AIRFLOW_CTX_TASK_ID='run_activesg_scrape' AIRFLOW_CTX_EXECUTION_DATE='2025-05-26T13:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-26T13:00:00+00:00'
+[2025-05-26T13:15:09.846+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-26T13:15:09.848+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-26T13:15:09.849+0000] {logging_mixin.py:190} INFO - Current task name:run_activesg_scrape state:running start_date:2025-05-26 13:15:09.447356+00:00
+[2025-05-26T13:15:09.850+0000] {logging_mixin.py:190} INFO - Dag name:main_dag and current dag run status:running
+[2025-05-26T13:15:09.852+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-26T13:15:09.968+0000] {docker.py:345} INFO - Starting docker container from image poewun/activesg-scrape:latest
+[2025-05-26T13:15:10.077+0000] {docker.py:353} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2025-05-26T13:15:53.314+0000] {docker.py:69} INFO - ERROR:root:expected str, bytes or os.PathLike object, not NoneType
+[2025-05-26T13:15:53.319+0000] {docker.py:69} INFO - Message: 
+[2025-05-26T13:15:53.321+0000] {docker.py:69} INFO - 
+[2025-05-26T13:15:53.322+0000] {docker.py:69} INFO - None
+[2025-05-26T13:15:54.331+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-26T13:15:54.334+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=main_dag, task_id=run_activesg_scrape, run_id=scheduled__2025-05-26T13:00:00+00:00, execution_date=20250526T130000, start_date=20250526T131509, end_date=20250526T131554
+[2025-05-26T13:15:54.421+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-26T13:15:54.423+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-26T13:15:54.424+0000] {logging_mixin.py:190} INFO - Dag name:main_dag queued_at:2025-05-26 13:15:00.360941+00:00
+[2025-05-26T13:15:54.426+0000] {logging_mixin.py:190} INFO - Task hostname:1862e9bdadf6 operator:DockerOperator
+[2025-05-26T13:15:54.508+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-26T13:15:54.521+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2025-05-26T13:15:54.575+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-26T13:15:54.586+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

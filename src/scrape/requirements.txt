@@ -1,0 +1,6 @@
+beautifulsoup4==4.13.3
+pandas==2.2.3
+psycopg2==2.9.10
+selenium==4.29.0
+SQLAlchemy==1.4.54
+webdriver_manager==4.0.2

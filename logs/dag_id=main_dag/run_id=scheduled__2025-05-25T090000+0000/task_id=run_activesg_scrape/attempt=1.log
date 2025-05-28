@@ -1,0 +1,62 @@
+[2025-05-26T01:00:12.206+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-26T01:00:12.238+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: main_dag.run_activesg_scrape scheduled__2025-05-25T09:00:00+00:00 [queued]>
+[2025-05-26T01:00:12.255+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: main_dag.run_activesg_scrape scheduled__2025-05-25T09:00:00+00:00 [queued]>
+[2025-05-26T01:00:12.257+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-26T01:00:12.286+0000] {taskinstance.py:2890} INFO - Executing <Task(DockerOperator): run_activesg_scrape> on 2025-05-25 09:00:00+00:00
+[2025-05-26T01:00:12.302+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=7343) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-26T01:00:12.305+0000] {standard_task_runner.py:72} INFO - Started process 7346 to run task
+[2025-05-26T01:00:12.305+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'main_dag', 'run_activesg_scrape', 'scheduled__2025-05-25T09:00:00+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/main.py', '--cfg-path', '/tmp/tmplkn_9yfh']
+[2025-05-26T01:00:12.307+0000] {standard_task_runner.py:105} INFO - Job 33: Subtask run_activesg_scrape
+[2025-05-26T01:00:12.521+0000] {task_command.py:467} INFO - Running <TaskInstance: main_dag.run_activesg_scrape scheduled__2025-05-25T09:00:00+00:00 [running]> on host 0e2c171a3c5e
+[2025-05-26T01:00:13.233+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='***@example.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='main_dag' AIRFLOW_CTX_TASK_ID='run_activesg_scrape' AIRFLOW_CTX_EXECUTION_DATE='2025-05-25T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-25T09:00:00+00:00'
+[2025-05-26T01:00:13.293+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-26T01:00:13.294+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-26T01:00:13.297+0000] {logging_mixin.py:190} INFO - Current task name:run_activesg_scrape state:running start_date:2025-05-26 01:00:12.240237+00:00
+[2025-05-26T01:00:13.298+0000] {logging_mixin.py:190} INFO - Dag name:main_dag and current dag run status:running
+[2025-05-26T01:00:13.301+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-26T01:00:13.845+0000] {docker.py:345} INFO - Starting docker container from image poewun/activesg-scrape:latest
+[2025-05-26T01:00:14.066+0000] {docker.py:353} WARNING - Using remote engine or docker-in-docker and mounting temporary volume from host is not supported. Falling back to `mount_tmp_dir=False` mode. You can set `mount_tmp_dir` parameter to False to disable mounting and remove the warning
+[2025-05-26T01:00:29.364+0000] {docker.py:69} INFO - ---Reading csv---
+[2025-05-26T01:00:29.365+0000] {docker.py:69} INFO -                                   gym_name  ...                   timestamp
+[2025-05-26T01:00:29.369+0000] {docker.py:69} INFO - 0             ActiveSG Gym @ Ang Mo Kio CC  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.373+0000] {docker.py:69} INFO - 1                Bukit Gombak ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.375+0000] {docker.py:69} INFO - 2   ActiveSG Hockey Village @ Boon Lay Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.376+0000] {docker.py:69} INFO - 3               Kallang Basin ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.378+0000] {docker.py:69} INFO - 4                      Katong ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.379+0000] {docker.py:69} INFO - 5              Bukit Canberra ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.381+0000] {docker.py:69} INFO - 6                      Bishan ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.383+0000] {docker.py:69} INFO - 7                 Bukit Batok ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.384+0000] {docker.py:69} INFO - 8                    Sengkang ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.386+0000] {docker.py:69} INFO - 9           ActiveSG Gym @ Fernvale Square  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.387+0000] {docker.py:69} INFO - 10                  Pasir Ris ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.389+0000] {docker.py:69} INFO - 11           Enabling Village ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.390+0000] {docker.py:69} INFO - 12                      Delta ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.392+0000] {docker.py:69} INFO - 13                   Clementi ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.394+0000] {docker.py:69} INFO - 14                Jalan Besar ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.395+0000] {docker.py:69} INFO - 15        ActiveSG Gym @ Serangoon Central  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.398+0000] {docker.py:69} INFO - 16        ActiveSG Gym @ Toa Payoh West CC  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.400+0000] {docker.py:69} INFO - 17               Yio Chu Kang ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.401+0000] {docker.py:69} INFO - 18                ActiveSG Gym @ Toa Payoh  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.403+0000] {docker.py:69} INFO - 19                     Yishun ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.404+0000] {docker.py:69} INFO - 20                   Tampines ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.405+0000] {docker.py:69} INFO - 21                        Senja-Cashew Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.407+0000] {docker.py:69} INFO - 22          Heartbeat @ Bedok ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.411+0000] {docker.py:69} INFO - 23                 Jurong Lake Gardens Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.413+0000] {docker.py:69} INFO - 24              Choa Chu Kang ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.414+0000] {docker.py:69} INFO - 25                  Woodlands ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.416+0000] {docker.py:69} INFO - 26                Jurong West ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.417+0000] {docker.py:69} INFO - 27                Jurong East ActiveSG Gym  ...  2025-05-26 09:00:21.321479
+[2025-05-26T01:00:29.419+0000] {docker.py:69} INFO - 
+[2025-05-26T01:00:29.420+0000] {docker.py:69} INFO - [28 rows x 3 columns]
+[2025-05-26T01:00:29.421+0000] {docker.py:69} INFO - ---End---
+[2025-05-26T01:00:29.423+0000] {docker.py:69} INFO - /src/data/20250526_09_00_gym_capacity.csv
+[2025-05-26T01:00:30.181+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-26T01:00:30.182+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=main_dag, task_id=run_activesg_scrape, run_id=scheduled__2025-05-25T09:00:00+00:00, execution_date=20250525T090000, start_date=20250526T010012, end_date=20250526T010030
+[2025-05-26T01:00:30.238+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-26T01:00:30.239+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-26T01:00:30.240+0000] {logging_mixin.py:190} INFO - Dag name:main_dag queued_at:2025-05-26 01:00:01.062534+00:00
+[2025-05-26T01:00:30.242+0000] {logging_mixin.py:190} INFO - Task hostname:0e2c171a3c5e operator:DockerOperator
+[2025-05-26T01:00:30.295+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-26T01:00:30.313+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
