@@ -55,7 +55,7 @@ with DAG(
         image="poewun/activesg-scrape:latest",
         command="python main.py",
         docker_url="unix://var/run/docker.sock",
-        auto_remove=True,
+        auto_remove="force",
         network_mode="bridge"
     )
 
