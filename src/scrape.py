@@ -14,7 +14,6 @@ from utils.db_utils import CnxnVariables, DBExecutor, QueryExecutor
 
 #import env
 load_dotenv(os.path.join(CURRENT_FILE_DIR,".env"))
-
 BROWSER=os.getenv("BROWSER")
 BROWSER_OPTIONS=os.getenv("BROWSER_OPTIONS")
 SCRAPE_URL=os.getenv("SCRAPE_URL")

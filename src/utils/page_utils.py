@@ -9,10 +9,6 @@ import os
 import pandas as pd
 from datetime import datetime
 
-SCRAPE_URL="https://activesg.gov.sg/gym-capacity"
-PAGE_READY="p.chakra-text.css-1h5d4o4"
-CARD_INDICATOR="div.chakra-stack.css-11ehgu5"
-
 class PageConfigs:
     scrape_url:str
     page_ready:str
