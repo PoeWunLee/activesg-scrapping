@@ -13,10 +13,18 @@ SCRAPE_URL="https://activesg.gov.sg/gym-capacity"
 PAGE_READY="p.chakra-text.css-1h5d4o4"
 CARD_INDICATOR="div.chakra-stack.css-11ehgu5"
 
+class PageConfigs:
+    scrape_url:str
+    page_ready:str
+    card_indicator:str
+
 class GymPageLoader:
-    def __init__(self,ctx:DriverContext, wait_strategy:str="presence"):
+    def __init__(self,ctx:DriverContext, page_cfg:PageConfigs,wait_strategy:str="presence"):
         self.ctx = ctx
         self.wait_strategy=wait_strategy
+        self.scrape_url=page_cfg.scrape_url
+        self.page_ready=page_cfg.page_ready
+        self.card_indicator=page_cfg.card_indicator
 
     def wait(self):
         """Wait strategy accoridng to inputs"""
@@ -26,16 +34,16 @@ class GymPageLoader:
                 "clickable": EC.element_to_be_clickable,
             }[self.wait_strategy]
         
-        return self.ctx.wait.until(condition((By.CSS_SELECTOR, PAGE_READY)))
+        return self.ctx.wait.until(condition((By.CSS_SELECTOR, self.page_ready)))
 
     def load_page(self) -> None:
         """Load URL with associated wait strategy - e.g. until card elements is located"""
-        self.ctx.driver.get(SCRAPE_URL)
+        self.ctx.driver.get(self.scrape_url)
         self.wait()
     
     def load_cards(self)->dict[str:str]:
         """Find Card elements containing Gym Names and Capacity fields - save as dict"""
-        elements = self.ctx.driver.find_elements(By.CSS_SELECTOR, CARD_INDICATOR)
+        elements = self.ctx.driver.find_elements(By.CSS_SELECTOR, self.card_indicator)
         gym_cards = {}
         for e in elements:
             gym_name, gym_capacity = e.text.split("\n")
@@ -48,10 +56,3 @@ class GymPageLoader:
         cards_df = pd.DataFrame(cards, columns=["gym_name", "capacity"])
         cards_df["scrape_timestamp"] = datetime.now()
         cards_df.to_csv(file_path)
-
-        
-
-
-    
-
-

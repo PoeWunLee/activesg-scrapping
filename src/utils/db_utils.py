@@ -88,26 +88,3 @@ class QueryExecutor(DBExecutor):
                 cur.copy_expert("COPY raw_scraped({}) FROM STDIN WITH DELIMITER ',' CSV HEADER".format(cols), f)   
         
         _copy()
-
-
-            
-
-
-
-
-
-
-
-
-
-
-    
-
-                
-
-        
-
-    
-
-
-#class with cursor operations
