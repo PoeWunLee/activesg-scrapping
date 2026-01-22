@@ -16,4 +16,4 @@ RUN apt-get update && apt-get install -y wget unzip && \
     rm google-chrome-stable_current_amd64.deb &&\
     apt-get clean
 
-CMD ["python", "scrape.py"]
+CMD ["python", "main.py"]
