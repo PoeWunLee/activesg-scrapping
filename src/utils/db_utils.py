@@ -2,23 +2,19 @@ from __future__ import annotations
 import psycopg2
 from contextlib import contextmanager
 from psycopg2.extensions import connection
-from pydantic import BaseModel
 from typing import Generator, Callable
 import logging
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-class CnxnVariables(BaseModel):
-    db_user:str
-    db_pwd:str
-    db_host:str
-    db_port:int
-    db_name:str
-
-class DBExecutor:
-    def __init__(self, cnxn_var:CnxnVariables):
-        self.cnxn_var=cnxn_var
+class DBConn:
+    def __init__(self, db_user:str,db_pwd:str, db_host:str,  db_port:int,db_name:str ):
+        self.db_user=db_user
+        self.db_pwd=db_pwd
+        self.db_host=db_host
+        self.db_port=db_port
+        self.db_name=db_name
 
     @contextmanager
     def db_connection(self)->Generator[connection,None,None]:
@@ -27,11 +23,11 @@ class DBExecutor:
         try:
             logger.info("Opening database connection")
             conn = psycopg2.connect(
-                f"user={self.cnxn_var.db_user} \
-                password={self.cnxn_var.db_pwd} \
-                host={self.cnxn_var.db_host} \
-                port={self.cnxn_var.db_port} \
-                dbname={self.cnxn_var.db_name}"
+                f"user={self.db_user} \
+                password={self.db_pwd} \
+                host={self.db_host} \
+                port={self.db_port} \
+                dbname={self.db_name}"
             )
             yield conn
             conn.commit()
@@ -64,7 +60,7 @@ class DBExecutor:
             return wrapper
         return decorator
 
-class QueryExecutor(DBExecutor):
+class QueryExecutor(DBConn):
     """Class that holds all possible queries"""
 
     def select_all(self)->list[tuple]:

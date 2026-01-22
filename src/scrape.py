@@ -9,8 +9,8 @@ sys.path.append(os.path.join(CURRENT_FILE_DIR,'utils'))
 
 #utils imports
 from utils.browser_utils import initialise_browser_options, get_browser, managed_browser
-from utils.page_utils import PageConfigs,GymPageLoader
-from utils.db_utils import CnxnVariables, DBExecutor, QueryExecutor
+from utils.page_utils import PageConfigs,GymPageLoader, GymCardsProcessor
+from utils.db_utils import QueryExecutor
 
 #import env
 load_dotenv(os.path.join(CURRENT_FILE_DIR,".env"))
@@ -33,23 +33,18 @@ def main():
 
     # 2. Scrape and export
     page_cfg=PageConfigs(
-        SCRAPE_URL,PAGE_READY,CARD_INDICATOR
+        scrape_url=SCRAPE_URL,page_ready=PAGE_READY,card_indicator=CARD_INDICATOR
     )
-
     with managed_browser(browser,opt) as ctx:
         gym_page = GymPageLoader(ctx, page_cfg,wait_strategy="presence")
-        gym_page.load_page()
-        card_elements = gym_page.load_cards()
+        card_elements = gym_page.load_pages_and_cards()
 
-    gym_page.save_cards_as_csv(card_elements, EXPORT_FILE_PATH)
+        gym_card_processor = GymCardsProcessor()
+        gym_card_processor.transform_and_export_cards(card_elements, EXPORT_FILE_PATH)
 
     # 3. Copy to Postgres
-    cnxn_var = CnxnVariables(
-        db_user=DB_USER, db_pwd=DB_PWD, db_host=DB_HOST, db_port=DB_PORT, db_name=DB_NAME
-    )
-    cnxn = DBExecutor(cnxn_var)
-    cur = QueryExecutor(cnxn)
-    cur.copy_data()
+    cur = QueryExecutor(db_user=DB_USER, db_pwd=DB_PWD, db_host=DB_HOST, db_port=DB_PORT, db_name=DB_NAME)
+    cur.copy_data(EXPORT_FILE_PATH)
 
 if __name__ == "__main__":
     main()
